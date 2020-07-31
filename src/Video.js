@@ -47,7 +47,10 @@ url='https://www.instagram.com/p/CDQ1TirjEiS/' /> */}
         ref={videoRef}
         src="https://www.youtube.com/embed/3HanWyYtIyE"
       ></iframe>
-      <VideoFooter />
+      <VideoFooter channel="alexanderajju"
+      description ="checkout"
+      song="blash.........blash"
+      />
     </div>
   );
 }

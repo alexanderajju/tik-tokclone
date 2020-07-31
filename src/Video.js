@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
 import "./Video.css";
 import VideoFooter from "./VideoFooter";
-import InstagramEmbed from "react-instagram-embed";
 import VideoSidebar from "./VideoSidebar";
 
-function Video() {
+function Video({ url, channel, description, song, likes, messages, shares }) {
   const videoRef = useRef(null);
   const [play, setPlay] = useState(false);
   const onVideoPress = () => {
@@ -18,34 +17,20 @@ function Video() {
   };
   return (
     <div className="video">
-      {/* 
-<InstagramEmbed
-className="video__player"
-ref={videoRef}
-              onClick={onVideoPress}
-             loop
-url='https://www.instagram.com/p/CDQ1TirjEiS/' /> */}
-
-      {/* <video className="video__player"
-             ref={videoRef}
-              onClick={onVideoPress}
-             loop
-             src="https://www.youtube.com/embed/3HanWyYtIyE"> */}
-      {/* 
-            </video> */}
-      <iframe
+      <video
         className="video__player"
-        loop
-        onClick={onVideoPress}
         ref={videoRef}
-        src="https://www.youtube.com/embed/3HanWyYtIyE"
-      ></iframe>
+        onClick={onVideoPress}
+        loop
+        src={url}
+      ></video>
+
       <VideoFooter
-        channel="alexanderajju"
-        description="checkout"
-        song="blash.........blash"
+        channel={channel}
+        description={description}
+        song={song}
       />
-      <VideoSidebar/>
+      <VideoSidebar likes={likes} messages={messages} shares={shares} />
     </div>
   );
 }
